@@ -19,19 +19,38 @@
             <h1>Inventario</h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
-            <center><img src="imagenes/Inventario.png" alt="mee"  /></center>            
+           <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
             <label for="txt-usuario">Usuario</label>
             <input type="text" name="txt-usuario" id="txt-usuario" value="">
             <label for="txt-password">Contraseña</label>
             <input type="password" name="txt-password" id="txt-password" value="">
-            <a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Ingresa</a>
+            <a href="#page" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Ingresa</a>
             
         </div><!-- /content -->
-    </div><!-- /page -->
+
+    </div><!-- /page -->   <!--FIN primera pagina-->
+    <div data-role="page" id="page">
+        <div data-role="header" data-theme="c">
+            <h1>Toma de Inventario</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+           <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
+            <label for="txt-articulo">Articulo</label>
+            <input type="text" name="txt-articulo" id="txt-articulo" value="" data-clear-btn="true">
+            <p>Aqui va la descripción del artículo<p>
+            <label for="num-cantidad">Cantidad</label>
+            <input type="number" name="num-cantidad" id="num-cantidad" value="0" data-clear-btn="true">
+            <a href="#" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-toma" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5 ui-icon-check" >Guardar</a>
+            
+        </div><!-- /content -->
+
+    </div><!-- /page --> 
+
+
 </body>
-    <!--FIN primera pagina-->
+ 
 
 
 
-  </body>
+ 
 </html>
