@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>:: Título de la página ::</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Enlace a las librerias jQuery y jQuery Mobile -->
+   	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+   	<link href="css/themes/1/conf-room1.min.css" rel="stylesheet" />
+    <link href="css/themes/1/jquery.mobile.icons.min.css" rel="stylesheet" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  </head>
+  <body>
+  	<!--primera pagina-->
+     <div data-role="page">
+        <div data-role="header" data-theme="c">
+            <h1>Inventario</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <center><img src="imagenes/Inventario.png" alt="mee"  /></center>            
+            <label for="txt-usuario">Usuario</label>
+            <input type="text" name="txt-usuario" id="txt-usuario" value="">
+            <label for="txt-password">Contraseña</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+            <a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Ingresa</a>
+            
+        </div><!-- /content -->
+    </div><!-- /page -->
+</body>
+    <!--FIN primera pagina-->
+
+
+
+  </body>
+</html>
