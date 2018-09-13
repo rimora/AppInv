@@ -7,10 +7,10 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Solo frases</name>
+    <name>Toma de Inventario</name>
 
     <description>
-        Pequeña y básica App para guardar frases célebres
+        AppInv
     </description>
 
     <author href="http://miapp.com" email="hola@gmail.com">
