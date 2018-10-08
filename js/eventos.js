@@ -39,7 +39,7 @@ $('#BtnIngresa').click(function () {
           });//AJAX
 
 */
-
+      alert(articulo);
         $.ajax({
                             url: "http://192.168.1.77:7010/api/articulos/"+ articulo,
                             type: "GET",
@@ -53,6 +53,7 @@ $('#BtnIngresa').click(function () {
                             },
                             error: function(jqxhr, textStatus, error){
                                 $('#DescripcionArticulo').html("Articulo no encontrado en el catálogo");
+                                alert("http://192.168.1.77:7010/api/articulos/"+ articulo);
                             },
                             async: false, // La petici�n es s�ncrona
                             cache: false // No queremos usar la cach� del navegador
@@ -137,12 +138,5 @@ $('#BtnGuardar').click(function () {
 
 
         }//existearticulo
-
-
-    
-   
     });//click
-});//$(document).ready(function()   
-
-
-
+});//$(document).ready(function()
