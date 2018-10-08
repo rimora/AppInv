@@ -40,7 +40,8 @@ $('#BtnIngresa').click(function () {
 
 */
       alert(articulo);
-        $.ajax({
+      /*
+                          $.ajax({
                             url: "http://192.168.1.77:7010/api/articulos/"+ articulo,
                             type: "GET",
                             dataType: 'json',
@@ -59,7 +60,11 @@ $('#BtnIngresa').click(function () {
                             cache: false // No queremos usar la cach� del navegador
                             });
 
-
+*/
+                $.getJSON("http://192.168.1.77:7010/api/articulos/"+ articulo, function(resultado) {
+                  $('#DescripcionArticulo').html(resultado[0].Descripcion);
+                                existearticulo=1;     
+               });
 
 
 
