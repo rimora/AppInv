@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     
 /*
@@ -22,13 +23,13 @@ $('#BtnIngresa').click(function () {
  $('#txt-articulo').focusout(function() {
        var articulo= $('#txt-articulo').val();  
       
-       
+       /*
        $.ajax({url: "http://192.168.1.77:7010/api/articulos/"+ articulo, success: function(resultado){
             
           //alert(resultado[0].Descripcion);
           
             $('#DescripcionArticulo').html(resultado[0].Descripcion);
-               existearticulo=1
+               existearticulo=1;
                  
             },error : function(xhr, status) {        
               
@@ -36,6 +37,33 @@ $('#BtnIngresa').click(function () {
               
             }
           });//AJAX
+
+*/
+
+        $.ajax({
+                            url: "http://192.168.1.77:7010/api/articulos/"+ articulo,
+                            type: "GET",
+                            dataType: 'json',
+                           // data:{dispositivo:dispositivo,tipooperacion:operacion,devcab:detalles},
+                            success: function(resultado){
+                            // Se ejecuta cuando se ha recibido correctamente
+                            // los datos de la url
+                                $('#DescripcionArticulo').html(resultado[0].Descripcion);
+                                existearticulo=1;     
+                            },
+                            error: function(jqxhr, textStatus, error){
+                                $('#DescripcionArticulo').html("Articulo no encontrado en el catálogo");
+                            },
+                            async: false, // La petici�n es s�ncrona
+                            cache: false // No queremos usar la cach� del navegador
+                            });
+
+
+
+
+
+
+
 });
 
 $('#BtnGuardar').click(function () {
@@ -115,3 +143,6 @@ $('#BtnGuardar').click(function () {
    
     });//click
 });//$(document).ready(function()   
+
+
+
