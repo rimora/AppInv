@@ -40,9 +40,9 @@ $('#BtnIngresa').click(function () {
 
 */
       alert(articulo);
-      /*
+     
                           $.ajax({
-                            url: "http://192.168.1.77:7010/api/articulos/"+ articulo,
+                            url: "http://10.57.146.244:7010/api/articulos/"+ articulo,
                             type: "GET",
                             dataType: 'json',
                            // data:{dispositivo:dispositivo,tipooperacion:operacion,devcab:detalles},
@@ -54,19 +54,21 @@ $('#BtnIngresa').click(function () {
                             },
                             error: function(jqxhr, textStatus, error){
                                 $('#DescripcionArticulo').html("Articulo no encontrado en el catálogo");
-                                alert("http://192.168.1.77:7010/api/articulos/"+ articulo);
+                                
                             },
                             async: false, // La petici�n es s�ncrona
                             cache: false // No queremos usar la cach� del navegador
                             });
 
-*/
+
+
+/*
                 $.getJSON("http://192.168.1.77:7010/api/articulos/"+ articulo, function(resultado) {
                   $('#DescripcionArticulo').html(resultado[0].Descripcion);
                                 existearticulo=1;     
                });
 
-
+*/
 
 
 
@@ -94,11 +96,11 @@ $('#BtnGuardar').click(function () {
                 };  
          
             var t = JSON.stringify(objetoarticulo);  
-            var id = "0"; 
+           
             
             
             
-            $.ajax({type: "POST",  url: "http://192.168.1.77:7010/api/articulos/", contentType: "application/json; charset=utf-8",
+            $.ajax({type: "POST",  url: "http://10.57.146.244:7010/api/articulos/", contentType: "application/json; charset=utf-8",
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
@@ -144,4 +146,9 @@ $('#BtnGuardar').click(function () {
 
         }//existearticulo
     });//click
+    document.getElementById("txt-articulo").addEventListener("focus", limpiamensajeinsert);
+
+    function limpiamensajeinsert() {
+    document.getElementById("MensajeInsert").html("");
+    }
 });//$(document).ready(function()
