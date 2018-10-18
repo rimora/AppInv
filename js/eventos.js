@@ -146,9 +146,5 @@ $('#BtnGuardar').click(function () {
 
         }//existearticulo
     });//click
-    document.getElementById("txt-articulo").addEventListener("focus", limpiamensajeinsert);
-
-    function limpiamensajeinsert() {
-    document.getElementById("MensajeInsert").html("");
-    }
+   
 });//$(document).ready(function()
