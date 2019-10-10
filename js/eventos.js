@@ -42,7 +42,7 @@ $('#BtnIngresa').click(function () {
       alert(articulo);
      
                           $.ajax({
-                            url: "http://10.0.4.50:7010/api/articulos/"+ articulo,
+                            url: "http://10.0.4.89:7010/api/articulos/"+ articulo,
                             type: "GET",
                             dataType: 'json',
                            // data:{dispositivo:dispositivo,tipooperacion:operacion,devcab:detalles},
@@ -100,7 +100,7 @@ $('#BtnGuardar').click(function () {
             
             
             
-            $.ajax({type: "POST",  url: "http://10.0.4.50:7010/api/articulos/", contentType: "application/json; charset=utf-8",
+            $.ajax({type: "POST",  url: "http://10.0.4.89:7010/api/articulos/", contentType: "application/json; charset=utf-8",
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
