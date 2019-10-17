@@ -43,7 +43,7 @@ $('#BtnIngresa').click(function () {
      
                           $.ajax({
                           //  url: "http://10.0.0.202:7010/api/articulos/"+ articulo,
-                            url: "http://192.168.0.104:7010/api/articulos/"+ articulo,
+                            url: "http://192.168.0.102:7010/api/articulos/"+ articulo,
                             type: "GET",
                             dataType: 'json',
                            // data:{dispositivo:dispositivo,tipooperacion:operacion,devcab:detalles},
@@ -104,7 +104,7 @@ $('#BtnGuardar').click(function () {
             
             
             //$.ajax({type: "POST",  url: "http://10.0.0.202:7010/api/articulos/", contentType: "application/json; charset=utf-8",
-            $.ajax({type: "POST",  url: "http://192.168.0.104:7010/api/articulos/", contentType: "application/json; charset=utf-8",
+            $.ajax({type: "POST",  url: "http://192.168.0.102:7010/api/articulos/", contentType: "application/json; charset=utf-8",
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
