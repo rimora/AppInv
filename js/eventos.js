@@ -42,7 +42,8 @@ $('#BtnIngresa').click(function () {
       //alert(articulo);
      
                           $.ajax({
-                            url: "http://10.0.0.202:7010/api/articulos/"+ articulo,
+                          //  url: "http://10.0.0.202:7010/api/articulos/"+ articulo,
+                            url: "http://192.168.0.104:7010/api/articulos/"+ articulo,
                             type: "GET",
                             dataType: 'json',
                            // data:{dispositivo:dispositivo,tipooperacion:operacion,devcab:detalles},
@@ -78,6 +79,7 @@ $('#BtnGuardar').click(function () {
     var cantidad= $('#num-cantidad').val();  
     var articulo= $('#txt-articulo').val();  
     var bodega= $('#selectbodega').val(); 
+    var boleta= $('#txt-boleta').val(); 
 
        if (cantidad<=0 || existearticulo==0)
        {
@@ -91,7 +93,8 @@ $('#BtnGuardar').click(function () {
                      clavearticulo: articulo,  
                      descripcion: "LXI",   
                      existencia: cantidad,  
-                     bodega: bodega
+                     bodega: bodega,
+                     boleta: boleta
           
                 };  
          
@@ -100,11 +103,13 @@ $('#BtnGuardar').click(function () {
             
             
             
-            $.ajax({type: "POST",  url: "http://10.0.0.202:7010/api/articulos/", contentType: "application/json; charset=utf-8",
+            //$.ajax({type: "POST",  url: "http://10.0.0.202:7010/api/articulos/", contentType: "application/json; charset=utf-8",
+            $.ajax({type: "POST",  url: "http://192.168.0.104:7010/api/articulos/", contentType: "application/json; charset=utf-8",
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
                 {
+                  $('#txt-boleta').val(""); 
                   $('#txt-articulo').val(""); 
                   $('#num-cantidad').val(0);
                   $('#DescripcionArticulo').html("");
