@@ -24,7 +24,7 @@ $('#BtnIngresa').click(function () {
        var articulo= $('#txt-articulo').val();  
       
        /*
-       $.ajax({url: "http://192.168.1.77:7010/api/articulos/"+ articulo, success: function(resultado){
+       $.ajax({url: "http://189.198.138.202:7010/api/articulos/"+ articulo, success: function(resultado){
             
           //alert(resultado[0].Descripcion);
           
@@ -42,7 +42,7 @@ $('#BtnIngresa').click(function () {
       //alert(articulo);
      
                           $.ajax({
-                            url: "http://10.0.0.202:7010/api/articulos/"+ articulo,
+                            url: "http://189.198.138.202:7010/api/articulos/"+ articulo,
                          //   url: "http://192.168.0.102:7010/api/articulos/"+ articulo,
                             type: "GET",
                             dataType: 'json',
@@ -103,7 +103,7 @@ $('#BtnGuardar').click(function () {
             
             
             
-            $.ajax({type: "POST",  url: "http://10.0.0.202:7010/api/articulos/", contentType: "application/json; charset=utf-8",
+            $.ajax({type: "POST",  url: "http://189.198.138.202:7010/api/articulos/", contentType: "application/json; charset=utf-8",
            // $.ajax({type: "POST",  url: "http://192.168.0.102:7010/api/articulos/", contentType: "application/json; charset=utf-8",
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
