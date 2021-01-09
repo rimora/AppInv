@@ -18,68 +18,12 @@
   	<!--primera pagina-->
      <div data-role="page" id="pagina1">
         <div data-role="header" data-theme="c">
-            <h1>Inventario</h1>
+            <h1>ENTREGAS</h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
            <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
             <div data-role="fieldcontain" data-theme="b" style="width:300px">
-                  <label for="selectbodega"><b>Bodega:</b></label>
-                  <select name="selectbodega" id="selectbodega" data-theme="b">
-                      <option value=XXX>
-                          Selecciona
-                      </option>
-                      <option value=SL>
-                          SL
-                      </option>
-                      <option value=SL1>
-                          SL1
-                      </option>
-                      <option value=SLDN>
-                          SLDN
-                      </option>
-                      <option value=SLTS>
-                          SLTS
-                      </option>
-					  <option value=LN1>
-                          LN1
-                      </option>
-					  <option value=LN2>
-                          LN2
-                      </option>
-					  <option value=LNC>
-                          LNC
-                      </option>
-					  <option value=LNC1>
-                          LNC1
-                      </option>
-					  <option value=LNDN>
-                          LNDN
-                      </option>
-					  <option value=CB>
-                          CB
-                      </option>
-					  <option value=CB1>
-                          CB1
-                      </option>
-					  <option value=CB2>
-                          CB2
-                      </option>
-					  <option value=CB3>
-                          CB3
-                      </option>
-					  <option value=CB4>
-                          CB4
-                      </option>
-					  <option value=CBDN>
-                          CBDN
-                      </option>
-					  <option value=CBTS>
-                          CBTS
-                      </option>
-					  <option value=PC>
-                          PC
-                      </option>
-                  </select>
+                  
             </div> 
             <label for="txt-usuario">Usuario</label>
             <input type="text" name="txt-usuario" id="txt-usuario" value="">
@@ -92,10 +36,48 @@
     </div><!-- /page -->   <!--FIN primera pagina-->
     <div data-role="page" id="pagina2">
         <div data-role="header" data-theme="c">
-            <h1>Toma de Inventario</h1>
+            <h1>Pedidos</h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
            <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
+			<fieldset data-role="controlgroup" data-theme="b" data-type="horizontal">
+		        <legend>Visualizar Pedidos:</legend>
+		        <input type="radio" name="radio-choice-t-6" id="rpendientes" value="on" checked="checked">
+		        <label for="radio-choice-t-6a">Pendientes</label>
+		        <input type="radio" name="radio-choice-t-6" id="rentregados" value="off">
+		        <label for="radio-choice-t-6b">Entregados</label>		        
+				<input type="radio" name="radio-choice-t-6" id="rtodos" value="off">
+		        <label for="radio-choice-t-6b">Todos</label>		        
+	    	</fieldset>	
+			<div id="pedidos">
+				<table data-role="table" id="tabla" data-mode="reflow" class="movie-list ui-responsive"></table>			
+			</div>
+			
+			 <div class="ui-grid-a">
+    <div class="ui-block-a" >
+    <div class="ui-bar ui-bar-e">
+       <strong>Esta es la columna numero 1</strong> El texto que se ecriba aqui se almodará a la mitad de pagina.
+    </div>
+    </div>
+    <div class="ui-block-b">
+    <div class="ui-bar ui-bar-a">
+       <strong>Esta es la columna numero 2</strong> El texto que se ecriba aqui se almodará a la otra mitad de pagina.
+    </div>
+    </div>
+       <div class="ui-block-a" >
+    <div class="ui-bar ui-bar-c">
+       <strong>Esta es la columna numero 1</strong> El texto que se ecriba aqui se almodará a la mitad de pagina.
+    </div>
+    </div>
+      
+       <div class="ui-block-b">
+    <div class="ui-bar ui-bar-b">
+       <strong>Esta es la columna numero 2</strong> El texto que se ecriba aqui se almodará a la otra mitad de pagina.
+    </div>
+    </div>
+    </div><!-- /grid-a con dos filas-->
+	
+	
 			<label for="txt-boleta">Boleta</label>
             <input type="text" name="txt-boleta" id="txt-boleta" value="" data-clear-btn="true">
             
