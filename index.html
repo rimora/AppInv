@@ -5,12 +5,17 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- Enlace a las librerias jQuery y jQuery Mobile -->
-   	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+   <!--
+   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
    	<link href="css/personalizado.min.css" rel="stylesheet" />
     <link href="css/personalizado.min.css" rel="stylesheet" />
-    <link href="css/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="css/jquery.mobile.icons.min.css" rel="stylesheet" />-->
+	<!--
 	  <script src="js/jquery-1.11.1.min.js"></script>
-	  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+	  <script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/eventos.js" type="text/javascript"></script>
     <script src="phonegap.js"></script>
   </head>
@@ -43,11 +48,11 @@
 			<fieldset data-role="controlgroup" data-theme="b" data-type="horizontal">
 		        <legend>Visualizar Pedidos:</legend>
 		        <input type="radio" name="radio-choice-t-6" id="rpendientes" value="on" checked="checked">
-		        <label for="radio-choice-t-6a">Pendientes</label>
+		        <label for="rpendientes">Pendientes</label>
 		        <input type="radio" name="radio-choice-t-6" id="rentregados" value="off">
-		        <label for="radio-choice-t-6b">Entregados</label>		        
+		        <label for="rentregados">Entregados</label>		        
 				<input type="radio" name="radio-choice-t-6" id="rtodos" value="off">
-		        <label for="radio-choice-t-6b">Todos</label>		        
+		        <label for="rtodos">Todos</label>		        
 	    	</fieldset>	
 			<div id="pedidos">
 				<table data-role="table" id="tabla" data-mode="reflow" class="movie-list ui-responsive"></table>			
