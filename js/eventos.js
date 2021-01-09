@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     
 /*
@@ -9,17 +8,27 @@ $(document).ready(function() {
 
 */
 var existearticulo=0;
-$('#BtnIngresa').click(function () {
-  var bodega= $('#selectbodega').val();  
-    if (bodega=="XXX")
-    {
-      alert("Seleccione bodega por favor");
-    }
-    else
-    {
-      window.location.href='#pagina2';      
-    }
-  });
+var json = {"alumnoUTP":[{"nombre":"Ricardo","apePaterno":"Carpio","edad":39},{"nombre":"Thiago","apePaterno":"Carpio","edad":5},{"nombre":"José","apePaterno":"Carpio","edad":74}]};
+
+
+$('#BtnIngresa').click(function () {  
+      window.location.href='#pagina2';  
+ });
+ $('#pagina2').live('pagebeforeshow',function(event, ui){
+        
+	var DatosJson = JSON.parse(JSON.stringify(json));
+    //console.log(DatosJson.alumnoUTP.length);
+    $("#tabla").append('<tr><td>Nombre</td>'+
+ 	'<td>Apellido paterno</td>' + 
+ 	'<td>Edad</td>');
+    for (i = 0; i < DatosJson.alumnoUTP.length; i++){
+ 
+		$("#tabla").append('<tr>' + 
+		'<td align="center" style="dislay: none;">' + DatosJson.alumnoUTP[i].nombre + '</td>'+
+		'<td align="center" style="dislay: none;">' + DatosJson.alumnoUTP[i].apePaterno + '</td>'+
+		'<td align="center" style="dislay: none;">' + DatosJson.alumnoUTP[i].edad + '</td>'+'</tr>');
+	}
+ });
  $('#txt-articulo').focusout(function() {
        var articulo= $('#txt-articulo').val();  
       
@@ -80,7 +89,7 @@ $('#BtnGuardar').click(function () {
     var articulo= $('#txt-articulo').val();  
     var bodega= $('#selectbodega').val(); 
     var boleta= $('#txt-boleta').val(); 
-
+	
        if (cantidad<=0 || existearticulo==0)
        {
         alert("La cantidad debe ser mayor a cero y debe existir el articulo en el catalogo");
