@@ -45,15 +45,21 @@
         </div><!-- /header -->
         <div role="main" class="ui-content">
            <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
-			<fieldset data-role="controlgroup" data-theme="b" data-type="horizontal">
-		        <legend>Visualizar Pedidos:</legend>
-		        <input type="radio" name="radio-choice-t-6" id="rpendientes" value="on" checked="checked">
-		        <label for="rpendientes">Pendientes</label>
-		        <input type="radio" name="radio-choice-t-6" id="rentregados" value="off">
-		        <label for="rentregados">Entregados</label>		        
-				<input type="radio" name="radio-choice-t-6" id="rtodos" value="off">
-		        <label for="rtodos">Todos</label>		        
-	    	</fieldset>	
+			<div data-role="fieldcontain">	
+			
+				<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+
+					<input type="radio" name="radio-choice-1" id="radio_pendientes" value="choice-1" checked="checked" />
+					<label for="radio_pendientes">Pendientes</label>
+					
+					<input type="radio" name="radio-choice-1" id="radio_entregados" value="choice-2"  />
+					<label for="radio_entregados">Entregados</label>
+					
+					<input type="radio" name="radio-choice-1" id="radio_todos" value="choice-3"  />
+					<label for="radio_todos">Todos</label>
+				</fieldset>
+			</div>
+
 			<div id="pedidos">
 				<table data-role="table" id="tabla" data-mode="reflow" class="movie-list ui-responsive"></table>			
 			</div>
