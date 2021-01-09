@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    document.addEventListener("deviceready",function(){ 
     
 /*
     document.addEventListener("deviceready",function(){ 
@@ -15,7 +16,7 @@ $('#BtnIngresa').click(function () {
       window.location.href='#pagina2';  
  });
  $('#pagina2').live('pagebeforeshow',function(event, ui){
-        
+        navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
 	var DatosJson = JSON.parse(JSON.stringify(json));
     //console.log(DatosJson.alumnoUTP.length);
     $("#tabla").append('<tr><td>Nombre</td>'+
@@ -161,4 +162,5 @@ $('#BtnGuardar').click(function () {
         }//existearticulo
     });//click
    
-});//$(document).ready(function()
+ },false);//document.addEventListener("deviceready",function(){    
+});//$(document).ready(function() 
