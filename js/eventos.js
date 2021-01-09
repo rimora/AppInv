@@ -4,12 +4,7 @@ var json = {"alumnoUTP":[{"nombre":"Ricardo","apePaterno":"Carpio","edad":39},{"
 
     document.addEventListener("deviceready",function(){ 
 
-
-
-
-   
- },false);//document.addEventListener("deviceready",function(){    
- $('#BtnIngresa').click(function () {  
+$('#BtnIngresa').click(function () {  
       window.location.href='#pagina2';  
  });
  $('#pagina2').live('pagebeforeshow',function(event, ui){
@@ -27,4 +22,9 @@ var json = {"alumnoUTP":[{"nombre":"Ricardo","apePaterno":"Carpio","edad":39},{"
 		'<td align="center" style="dislay: none;">' + DatosJson.alumnoUTP[i].edad + '</td>'+'</tr>');
 	}
  });
+
+
+   
+ },false);//document.addEventListener("deviceready",function(){    
+ 
 });//$(document).ready(function() 
