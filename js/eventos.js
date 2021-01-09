@@ -1,11 +1,15 @@
 $(document).ready(function() {
-    document.addEventListener("deviceready",function(){ 
-
-var existearticulo=0;
+	var existearticulo=0;
 var json = {"alumnoUTP":[{"nombre":"Ricardo","apePaterno":"Carpio","edad":39},{"nombre":"Thiago","apePaterno":"Carpio","edad":5},{"nombre":"José","apePaterno":"Carpio","edad":74}]};
 
+    document.addEventListener("deviceready",function(){ 
 
-$('#BtnIngresa').click(function () {  
+
+
+
+   
+ },false);//document.addEventListener("deviceready",function(){    
+ $('#BtnIngresa').click(function () {  
       window.location.href='#pagina2';  
  });
  $('#pagina2').live('pagebeforeshow',function(event, ui){
@@ -23,6 +27,4 @@ $('#BtnIngresa').click(function () {
 		'<td align="center" style="dislay: none;">' + DatosJson.alumnoUTP[i].edad + '</td>'+'</tr>');
 	}
  });
-   
- },false);//document.addEventListener("deviceready",function(){    
 });//$(document).ready(function() 
