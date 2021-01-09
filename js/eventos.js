@@ -5,7 +5,8 @@ var json = {"alumnoUTP":[{"nombre":"Ricardo","apePaterno":"Carpio","edad":39},{"
     document.addEventListener("deviceready",function(){ 
 
 $('#BtnIngresa').click(function () {  
-      window.location.href='#pagina2';  
+      window.location.href='#pagina2';
+	  navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
  });
  $('#pagina2').live('pagebeforeshow',function(event, ui){
         navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
