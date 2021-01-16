@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	var existearticulo=0;
-
+	 var l = localStorage;
+	 var jsontodospedidos;
+	 
 
     document.addEventListener("deviceready",function(){ 
 
@@ -8,7 +10,8 @@ $(document).ready(function() {
 
    
  },false);//document.addEventListener("deviceready",function(){  
-function DatosJ(estado){ 			  		      
+/*
+	function DatosJ(estado){ 			  		      
 		var json = {"Pedidos":[{"pedido":"P001","cliente":"Carpio","estado":"pendiente"},{"pedido":"P002","cliente":"Ricardo","estado":"pendiente"},{"pedido":"P003","cliente":"Carpio","estado":"entregado"},{"pedido":"P004","cliente":"Carpio","estado":"entregado"},{"pedido":"P005","cliente":"Carpio","estado":"pendiente"}]};
 		var DatosJson = JSON.parse(JSON.stringify(json));
 		$("#tabla").empty();
@@ -24,29 +27,91 @@ function DatosJ(estado){
 				'<td align="center" style="dislay: none;">' + DatosJson.Pedidos[i].estado + '</td>'+'</tr>');
 			}//if			
 		}//for
-}//function DatosJ
+}//function DatosJ*/
+function DatosJ(estado){ 			  		      
+	var DatosJson = JSON.parse(JSON.stringify(jsontodospedidos));
+	var html = "";
+	$("#gridpedidos").empty();
+	html+='<div class="ui-block-a" style="width:30%"><div class="ui-bar ui-bar-a"><strong>Pedido</strong></div></div>';
+	html+='<div class="ui-block-b" style="width:50%"><div class="ui-bar ui-bar-b"><strong>Cliente</strong></div></div>';
+	html+='<div class="ui-block-c" style="width:20%"><div class="ui-bar ui-bar-e"><strong>Estado</strong></div></div>';
+	
+    $("#gridpedidos").append('');
+	for (i = 0; i < DatosJson.Pedidos.length; i++){			
+		if ((estado==DatosJson.Pedidos[i].estado) || (estado=="todos"))
+		{
+			html+='<div class="ui-block-a" style="width:30%"><div class="ui-bar ui-bar-a"><strong><a href="#" class="clasepedido" name=" '+DatosJson.Pedidos[i].pedido +'">'+DatosJson.Pedidos[i].pedido +'</a></strong></div></div>';
+			html+='<div class="ui-block-b" style="width:50%"><div class="ui-bar ui-bar-b"><strong>' + DatosJson.Pedidos[i].cliente + '</strong></div></div>';			
+			html+='<div class="ui-block-c" style="width:20%"><div class="ui-bar ui-bar-e"><strong>' + DatosJson.Pedidos[i].estado + '</strong></div></div>';
+		}//if			
+	}//for
+ $("#gridpedidos").append(html);
+}//function DatosJ*/	
+function DatosPedido(jsonpedido){ 			  		      
+	
+	var DatosJson = JSON.parse(JSON.stringify(jsonpedido));
+	var html = "";	
+	$("#datospedido").empty();
+	for (i = 0; i < DatosJson.Pedidos.length; i++){		
+		html+='<p>Pedido:'+DatosJson.Pedidos[i].pedido +'</p>';
+		html+='<p>Cliente:' + DatosJson.Pedidos[i].cliente + '</p>';
+		html+='<p>Dirección:' + DatosJson.Pedidos[i].direccion + '</p>';
+		html+='<p>Contacto:' + DatosJson.Pedidos[i].contacto + '</p>';		
+		html+='<p>Telefeno:' + DatosJson.Pedidos[i].telefono + '</p>';		
+	}//for
+$("#datospedido").append(html);
+}//function DatosJ*/	
+	
+//EVENTOS Y ELEMENTOS DE PAGINA 1
+	
  $('#BtnIngresa').click(function () {  
+	 jsontodospedidos = {"Pedidos":[{"pedido":"P001","cliente":"Carpio","estado":"pendiente"},{"pedido":"P002","cliente":"Ricardo","estado":"pendiente"},{"pedido":"P003","cliente":"Carpio","estado":"entregado"},{"pedido":"P004","cliente":"Carpio","estado":"entregado"},{"pedido":"P005","cliente":"Carpio","estado":"pendiente"}]};
+	
       window.location.href='#pagina2';
 	//  navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
  });
- $('#pagina2').on('pagebeforeshow',function(event, ui){
-	 //alert('hola');
-	 DatosJ("pendiente");
+
+	//EVENTOS Y ELEMENTOS DE PAGINA 2
+	
+ $('#pagina2').on('pagebeforeshow',function(event, ui){	
+	
+	DatosJ("pendiente");
      //   navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
 	
  });
-$("#radio_pendientes").bind( "change", function(event, ui) {	
-  //alert($("#radio_pendientes").val());
-  
-	DatosJ("pendiente");   
+$(document).on("click", ".navpedidos", function(){
+	var estado= $(this).attr("name");//el nombre tiene el numero de pedido	
+  	DatosJ(estado);   
 });
-$("#radio_entregados").bind( "change", function(event, ui) {	
-  //alert($("#radio_pendientes").val());  
-	DatosJ("entregado");    
+$(document).on("click", "a.clasepedido", function(){//al seleccionar un pedido del grid se debe obtener el detalle del pedido
+	var pedido= $(this).attr("name");//el nombre tiene el numero de pedido
+	//obtiene el detalle del pedido
+	var jsonpedido = {"Pedidos":[{"pedido":pedido,"cliente":"Carpio","estado":"pendiente","direccion":"Direccion","contacto":"datos del contacto","telefono":"telefono"}]};
+	DatosPedido(jsonpedido);    
+	window.location.href='#pagina3';
 });
-$("#radio_todos").bind( "change", function(event, ui) {	
-  //alert($("#radio_pendientes").val());
-  
-	DatosJ("todos");
-});
+
+	
+	//EVENTOS Y ELEMENTOS DE PAGINA 3
+	
+
+$('#pagina3').on('pagebeforeshow',function(event, ui){
+	 //alert('hola');	 
+     //   navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
+	
+ });
+$("a.clasepedido").bind( "click", function(event, ui){//al seleccionar un pedido
+	
+             /*var recibo= $(this).attr("name");//el nombre tiene el numero de recibo en la tabla PENCOBRO
+             var tipoop=window.localStorage.getItem("reimpresion");
+             var bodega=window.localStorage.getItem("bodega");
+             if (tipoop=='R'){//reimpresion
+             imprimircobro(recibo);
+             }
+             else{
+                 cancelarcobro(recibo);
+             }*/
+                 
+ }); 
+	
 });//$(document).ready(function() 
