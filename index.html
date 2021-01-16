@@ -14,6 +14,8 @@
 	  <script src="js/jquery-1.11.1.min.js"></script>
 	  <script src="js/jquery.mobile-1.4.5.min.js"></script>-->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.icons.min.css"  />
+	  <link rel="stylesheet" href="css/temas.min.css"  />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/eventos.js" type="text/javascript"></script>
@@ -90,20 +92,8 @@
 					</div>
 				</div>
 				
-			</div><!-- /grid-b con dos filas-->
-	
-	
-			<label for="txt-boleta">Boleta</label>
-            <input type="text" name="txt-boleta" id="txt-boleta" value="" data-clear-btn="true">
-            
-            <label for="txt-articulo">Articulo</label>
-            <input type="text" name="txt-articulo" id="txt-articulo" value="" data-clear-btn="true">
-            <h1 id=DescripcionArticulo></h1>
-            <label for="num-cantidad">Cantidad</label>
-            <input type="number" name="num-cantidad" id="num-cantidad" value="0" data-clear-btn="true" step="any">
-            <!--
-            <a href="#" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-guardar" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5 ui-icon-check ui-btn ui-btn-inline" data-ajax="false">Guardar</a>-->            
-            
+			</div><!-- /grid-b con dos filas-->	
+			
         </div><!-- /content -->
 		<div data-role="toolbar" data-type="footer" style="overflow:hidden;">
 			<div data-role="navbar">
@@ -126,12 +116,12 @@
 				<form>
 					<label for="textbitacora">Comentarios de entrega:</label>
 					<textarea cols="40" rows="8" name="textbitacora" id="textbitacora"></textarea>
-				</form>
+			  	</form>	
 			</div>
-			<div data-role="controlgroup" data-type="horizontal" id=botones>              
-              <a href="#" id=BtnGuardar class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left" data-ajax="false" >Guardar</a>
-              <a href="#" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-e ui-icon-back  ui-btn-icon-left">Salir</a>
-              <h1 id=MensajeInsert></h1>
+			<div data-role="controlgroup" data-type="horizontal" id=botones>   
+			  
+              <a href="#" id="BtnComentario" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left" data-ajax="false" >Guardar Comentario</a>              
+			 <a href="#" id="BtnEntregar" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left" data-ajax="false" >Entregar</a>              	
             </div>
         </div><!-- /content -->
 		<div data-role="toolbar" data-type="footer" style="overflow:hidden;">
