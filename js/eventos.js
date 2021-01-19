@@ -168,4 +168,7 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
 	
 	//  navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
  });
+ $('#BtnSalir').click(function () {  
+	  navigator.app.exitApp();
+ });
 });//$(document).ready(function() 
