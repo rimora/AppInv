@@ -33,7 +33,7 @@ function CrearGridPedidos(){
                             },
                             error: function(jqxhr, textStatus, error){
                                // $('#DescripcionArticulo').html("Articulo no encontrado en el catálogo");
-                                alert("error");
+                                navigator.notification.alert('Error al poblar pedidos verifique su conexión al servidor',null,'Poblar Pedidos','Aceptar');
                             },
                             async: false, // La petici�n es s�ncrona
                             cache: false // No queremos usar la cach� del navegador
@@ -99,7 +99,7 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
 	 var comentario= $('#textbitacora').val(); 	 
 	 if (comentario=="")
 	 {
-		alert("Debe indicar comentario");
+		navigator.notification.alert('Debe indicar comentario',null,'Guardar comentario','Aceptar');
 	 }
 	 else
 	 {
@@ -120,12 +120,12 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
                 if (filasafectadas>0)
                 {
                   
-                  alert("Comentario insertado");
+                  navigator.notification.alert('Comentario insertado',null,'Guardar comentario','Aceptar');
 				  $("#textbitacora").val(''); 
                 }
                 else
                 {
-                    alert("Ocurrio un error al guardar el comentario, consulte al administrador del sistema");
+                    navigator.notification.alert('Error al guardar comentario, contacte al administrador del sistema',null,'Guardar comentario','Aceptar');
                 }
 				
             }); //AJAX  
@@ -152,12 +152,12 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
                 if (filasafectadas>0)
                 {
                   
-                  alert("Pedido Actualizado");				  
+                  navigator.notification.alert('Pedido Actualizado',null,'Actualizar pedido','Aceptar');
 				  CrearGridPedidos();
                 }
                 else
                 {
-                    alert("Ocurrio un error al actualizar el pedido,consulte al administrador del sistema");
+                    navigator.notification.alert('Error al actualizar pedido',null,'Actualizar pedido','Aceptar');
                 }
 				
             }); //AJAX  
