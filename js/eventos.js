@@ -18,7 +18,7 @@ function CrearGridPedidos(){
 
 	//  navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
 	  $.ajax({
-                            url: "http://192.168.0.102:7010/api/pedidos/",                         
+                            url: "http://192.168.3.251:7010/api/pedidos/",                         
                             type: "GET",
                             dataType: 'json',                           
                             success: function(resultado){
@@ -33,7 +33,8 @@ function CrearGridPedidos(){
                             },
                             error: function(jqxhr, textStatus, error){
                                // $('#DescripcionArticulo').html("Articulo no encontrado en el catálogo");
-                                navigator.notification.alert('Error al poblar pedidos verifique su conexión al servidor',null,'Poblar Pedidos','Aceptar');
+                                //navigator.notification.alert('Error al poblar pedidos verifique su conexión al servidor',null,'Poblar Pedidos','Aceptar');
+								alert('Error al poblar pedidos verifique su conexión al servidor');
                             },
                             async: false, // La petici�n es s�ncrona
                             cache: false // No queremos usar la cach� del navegador
@@ -68,7 +69,7 @@ $(document).on("click", "a.clasepedido", function(){//al seleccionar un pedido d
 	
 	//obtiene el detalle del pedido	
 	$.ajax({
-                            url: "http://192.168.0.102:7010/api/pedidos/"+pedido,                         
+                            url: "http://192.168.3.251:7010/api/pedidos/"+pedido,                         
                             type: "GET",
                             dataType: 'json',                           
                             success: function(resultado){
@@ -99,7 +100,8 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
 	 var comentario= $('#textbitacora').val(); 	 
 	 if (comentario=="")
 	 {
-		navigator.notification.alert('Debe indicar comentario',null,'Guardar comentario','Aceptar');
+		//navigator.notification.alert('Debe indicar comentario',null,'Guardar comentario','Aceptar');
+		alert('Debe indicar comentario');
 	 }
 	 else
 	 {
@@ -114,18 +116,20 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
          
             var t = JSON.stringify(objetocomentario);  
            
-            $.ajax({type: "POST",  url: "http://192.168.0.102:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
+            $.ajax({type: "POST",  url: "http://192.168.3.251:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
                 {
                   
-                  navigator.notification.alert('Comentario insertado',null,'Guardar comentario','Aceptar');
+                  //navigator.notification.alert('Comentario insertado',null,'Guardar comentario','Aceptar');
+				  alert('Comentario insertado');
 				  $("#textbitacora").val(''); 
                 }
                 else
                 {
-                    navigator.notification.alert('Error al guardar comentario, contacte al administrador del sistema',null,'Guardar comentario','Aceptar');
+                    //navigator.notification.alert('Error al guardar comentario, contacte al administrador del sistema',null,'Guardar comentario','Aceptar');
+					alert('Error al guardar comentario');
                 }
 				
             }); //AJAX  
@@ -146,18 +150,20 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
                 };  
          
             var t = JSON.stringify(objetocomentario);              
-            $.ajax({type: "POST",  url: "http://192.168.0.102:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
+            $.ajax({type: "POST",  url: "http://192.168.3.251:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
                 {
                   
-                  navigator.notification.alert('Pedido Actualizado',null,'Actualizar pedido','Aceptar');
+                  //navigator.notification.alert('Pedido Actualizado',null,'Actualizar pedido','Aceptar');
+				  alert('Pedido Actualizado');
 				  CrearGridPedidos();
                 }
                 else
                 {
-                    navigator.notification.alert('Error al actualizar pedido',null,'Actualizar pedido','Aceptar');
+                    //navigator.notification.alert('Error al actualizar pedido',null,'Actualizar pedido','Aceptar');
+					alert('Error al actualizar pedido');
                 }
 				
             }); //AJAX  
