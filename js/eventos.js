@@ -18,7 +18,7 @@ function CrearGridPedidos(){
 
 	//  navigator.notification.alert('Dentro de page',null,'Documentos Pendientes de Cobro','Aceptar');
 	  $.ajax({
-                            url: "http://192.168.3.251:7010/api/pedidos/",                         
+                            url: "http://Hergomrdp.ddns.net:7010/api/pedidos/",                         
                             type: "GET",
                             dataType: 'json',                           
                             success: function(resultado){
@@ -69,7 +69,7 @@ $(document).on("click", "a.clasepedido", function(){//al seleccionar un pedido d
 	
 	//obtiene el detalle del pedido	
 	$.ajax({
-                            url: "http://192.168.3.251:7010/api/pedidos/"+pedido,                         
+                            url: "http://Hergomrdp.ddns.net:7010/api/pedidos/"+pedido,                         
                             type: "GET",
                             dataType: 'json',                           
                             success: function(resultado){
@@ -116,7 +116,7 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
          
             var t = JSON.stringify(objetocomentario);  
            
-            $.ajax({type: "POST",  url: "http://192.168.3.251:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
+            $.ajax({type: "POST",  url: "http://Hergomrdp.ddns.net:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
@@ -150,7 +150,7 @@ $('#pagina3').on('pagebeforeshow',function(event, ui){
                 };  
          
             var t = JSON.stringify(objetocomentario);              
-            $.ajax({type: "POST",  url: "http://192.168.3.251:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
+            $.ajax({type: "POST",  url: "http://Hergomrdp.ddns.net:7010/api/pedidos/", contentType: "application/json; charset=utf-8",           
                 dataType: "json", data:t}).done(function( filasafectadas ) {  
                
                 if (filasafectadas>0)
