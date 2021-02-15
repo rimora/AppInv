@@ -41,8 +41,7 @@ function CrearGridPedidos(){
                             });		
 	$("#gridpedidos").append(html); 
 }//function CrearGridPedidos	
-function DatosPedido(jsonpedido){ 			  		      
-	
+function DatosPedido(jsonpedido){	
 	var DatosJson = JSON.parse(JSON.stringify(jsonpedido));
 	var html = "";	
 	var estado="";
@@ -54,6 +53,7 @@ function DatosPedido(jsonpedido){
 		html+='<p>Dirección Embarque:' + DatosJson[i].dirembarque + '</p>';
 		html+='<p>Contacto:' + DatosJson[i].contacto + '</p>';		
 		html+='<p>Teléfono:' + DatosJson[i].telefono + '</p>';		
+		html+='<p>Observaciones:' + DatosJson[i].observaciones + '</p>';		
 		pedidoactual=DatosJson[i].pedido;
 	}//for
 $("#datospedido").append(html);
