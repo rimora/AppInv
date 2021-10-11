@@ -5,18 +5,12 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- Enlace a las librerias jQuery y jQuery Mobile -->
-   <!--
-   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+   	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
    	<link href="css/personalizado.min.css" rel="stylesheet" />
     <link href="css/personalizado.min.css" rel="stylesheet" />
-    <link href="css/jquery.mobile.icons.min.css" rel="stylesheet" />-->
-	<!--
+    <link href="css/jquery.mobile.icons.min.css" rel="stylesheet" />
 	  <script src="js/jquery-1.11.1.min.js"></script>
-	  <script src="js/jquery.mobile-1.4.5.min.js"></script>-->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<link rel="stylesheet" href="css/jquery.mobile.icons.min.css"  />	
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	  <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/eventos.js" type="text/javascript"></script>
     <script src="phonegap.js"></script>
   </head>
@@ -24,12 +18,68 @@
   	<!--primera pagina-->
      <div data-role="page" id="pagina1">
         <div data-role="header" data-theme="c">
-            <h1>ENTREGAS</h1>
+            <h1>Inventario</h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
            <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
             <div data-role="fieldcontain" data-theme="b" style="width:300px">
-                  
+                  <label for="selectbodega"><b>Bodega:</b></label>
+                  <select name="selectbodega" id="selectbodega" data-theme="b">
+                      <option value=XXX>
+                          Selecciona
+                      </option>
+                      <option value=SL>
+                          SL
+                      </option>
+                      <option value=SL1>
+                          SL1
+                      </option>
+                      <option value=SLDN>
+                          SLDN
+                      </option>
+                      <option value=SLTS>
+                          SLTS
+                      </option>
+					  <option value=LN1>
+                          LN1
+                      </option>
+					  <option value=LN2>
+                          LN2
+                      </option>
+					  <option value=LNC>
+                          LNC
+                      </option>
+					  <option value=LNC1>
+                          LNC1
+                      </option>
+					  <option value=LNDN>
+                          LNDN
+                      </option>
+					  <option value=CB>
+                          CB
+                      </option>
+					  <option value=CB1>
+                          CB1
+                      </option>
+					  <option value=CB2>
+                          CB2
+                      </option>
+					  <option value=CB3>
+                          CB3
+                      </option>
+					  <option value=CB4>
+                          CB4
+                      </option>
+					  <option value=CBDN>
+                          CBDN
+                      </option>
+					  <option value=CBTS>
+                          CBTS
+                      </option>
+					  <option value=PC>
+                          PC
+                      </option>
+                  </select>
             </div> 
             <label for="txt-usuario">Usuario</label>
             <input type="text" name="txt-usuario" id="txt-usuario" value="">
@@ -42,90 +92,28 @@
     </div><!-- /page -->   <!--FIN primera pagina-->
     <div data-role="page" id="pagina2">
         <div data-role="header" data-theme="c">
-            <h3>Pedidos</h3>
-			<!--
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#" data-icon="ui-icon-grid" name="pendiente" class="navpedidos">Pendientes</a></li>
-					<li><a href="#" data-icon="ui-icon-star" name="entregado" class="navpedidos">Entregados</a></li>
-					<li><a href="#" data-icon="ui-icon-gear" name="todos" class="navpedidos">Todos</a></li>					
-				</ul>
-			</div>-->
-			<!-- /navbar -->
+            <h1>Toma de Inventario</h1>
         </div><!-- /header -->
-        <div role="ma-in" class="ui-content">
-           <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->			
-			<div id="pedidos">
-				<table data-role="table" id="tabla" data-mode="reflow" class="movie-list ui-responsive"></table>			
-			</div>
-			
-			 <div class="ui-grid-a" id="gridpedidos">
-				<div class="ui-block-a" style="width:30%">
-					<div class="ui-bar ui-bar-a">
-					   <strong>Pedido</strong>
-					</div>
-				</div>
-				<div class="ui-block-b" style="width:50%">
-					<div class="ui-bar ui-bar-b">
-					   <strong>Cliente</strong>
-					</div>
-				</div>
-				
-				
-				
-				<div class="ui-block-a" style="width:30%">
-					<div class="ui-bar ui-bar-a">
-					   <strong>Esta es la columna numero 1</strong>
-					</div>
-				</div>
-				<div class="ui-block-b" style="width:50%">
-					<div class="ui-bar ui-bar-b">
-					   <strong>Esta es la columna numero 2</strong>
-					</div>
-				</div>
-				
-				
-			</div><!-- /grid-b con dos filas-->	
-			
-        </div><!-- /content -->
-		<div data-role="toolbar" data-type="footer" style="overflow:hidden;">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#" class="ui-button-active">Salir</a></li>
-				</ul>
-			</div><!-- /navbar -->
-		</div>
-
-    </div><!-- /page --> 
-	<div data-role="page" id="pagina3">
-    	<div data-role="toolbar" data-type="header">							
-			<button class="ui-toolbar-header-button-right ui-button ui-button-b ui-button-inline ui-mini ui-corner-all">Detalle del pedido<span class="ui-icon ui-icon-check"></span></button>
-	 	</div>
         <div role="main" class="ui-content">
-        	<div id="datospedido">
-			
-			</div>
-			<div>
-				<form>
-					<label for="textbitacora">Comentarios de entrega:</label>
-					<textarea cols="40" rows="8" name="textbitacora" id="textbitacora"></textarea>
-			  	</form>	
-			</div>
-			<div data-role="controlgroup" data-type="horizontal" id=botones>   
-			  
-              <a href="#" id="BtnComentario" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left" data-ajax="false" >Guardar Comentario</a>              
-			 <a href="#" id="BtnEntregar" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left" data-ajax="false" >Entregar</a>              	
+           <!-- <center><img src="imagenes/inventario.png" alt="mee"/></center>-->
+			<label for="txt-boleta">Boleta</label>
+            <input type="text" name="txt-boleta" id="txt-boleta" value="" data-clear-btn="true">
+            
+            <label for="txt-articulo">Articulo</label>
+            <input type="text" name="txt-articulo" id="txt-articulo" value="" data-clear-btn="true">
+            <h1 id=DescripcionArticulo></h1>
+            <label for="num-cantidad">Cantidad</label>
+            <input type="number" name="num-cantidad" id="num-cantidad" value="0" data-clear-btn="true" step="any">
+            <!--
+            <a href="#" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-guardar" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5 ui-icon-check ui-btn ui-btn-inline" data-ajax="false">Guardar</a>-->            
+            <div data-role="controlgroup" data-type="horizontal" id=GrupoBotones>              
+              <a href="#" id=BtnGuardar class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left" data-ajax="false" >Guardar</a>
+              <a href="#" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-e ui-icon-back  ui-btn-icon-left">Salir</a>
+              <h1 id=MensajeInsert></h1>
             </div>
         </div><!-- /content -->
-		<div data-role="toolbar" data-type="footer" style="overflow:hidden;">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#pagina2" class="ui-button-active">Regresar</a></li>
-					<li><a href="#" id="BtnSalir">Salir</a></li>
-				</ul>
-			</div><!-- /navbar -->
-		</div>
-    </div><!-- /page 3 -->   
+
+    </div><!-- /page --> 
 
 
 </body>
